@@ -9,7 +9,11 @@ import path from 'path';
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
 .then(()=>console.log("connected to database"))
-
+.catch((error)=>{
+    console.log(error);
+    console.log("Db connection failed");
+    process.exit(1);
+})
 
 const app = express();
 app.use(cookieParser());
