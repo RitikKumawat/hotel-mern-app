@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin:"https://mern-bookin-app-833u.onrender.com/",
+    origin:"https://mern-bookin-app-833u.onrender.com",
     credentials:true,
 }))
 app.use(express.static(path.join(__dirname,"../../frontend/dist")));
