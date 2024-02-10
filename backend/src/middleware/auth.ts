@@ -19,6 +19,7 @@ const verifyToken = (req:Request,res:Response, next:NextFunction)=>{
     try {
         const decoded = jwt.verify(token,process.env.JWT_SECRET as string);
         req.userId = (decoded as JwtPayload).userId;
+        res.set('X-Authenticated-User',req.userId);
         next();
     } catch (error) {
         console.log(error);
