@@ -23,7 +23,7 @@ export const signIn = async(formData:SignInFormData)=>{
        credentials:"include",
        headers:{
         "Content-Type":"application/json",
-        "Access-Control-Allow-Headers":"http://localhost:7000"
+        
        },
        body:JSON.stringify(formData)
     })
